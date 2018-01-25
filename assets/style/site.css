@@ -1,0 +1,31 @@
+* {
+    background-color: #aaa;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+
+header, main, footer {
+	text-align: center;
+	padding: 1em;
+	margin: 1em;
+}
+
+
+
+#game-board {
+	background-color: white;
+	color: red;
+	width: 70%;
+	height: 500px;
+}
+
+#cpy-sign {
+	color: white;
+	font-weight: bold;
+}
+
+#cpy-span {
+	padding-left: 1em;
+}
+	
