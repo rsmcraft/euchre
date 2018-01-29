@@ -1,5 +1,4 @@
 'use strict'
-
 $(() => {
   function sameColor (a, b) {
     return Math.max(a, b) - Math.min(a, b) === 1
@@ -26,23 +25,29 @@ $(() => {
     this.value = value
     this.isLeft = function (trumpSuit) {
       return this.value === cards.jack &&
-                   this.suit !== trumpSuit &&
-                   sameColor(this.suit, trumpSuit)
+             this.suit !== trumpSuit &&
+             sameColor(this.suit, trumpSuit)
     }
 
     this.isRight = function (trumpSuit) {
       return this.value === cards.jack &&
-                   this.suit === trumpSuit
+             this.suit === trumpSuit
     }
   }
 
   function Deck () {
     const arr = []
-    for (let s in suits) {
-      for (let c in cards) { arr.push(new Card(suits[s], cards[c])) }
+    for (let s in suits) { for (let c in cards) { arr.push(new Card(suits[s], cards[c])) } }
+
+    this.Shuffle = () => { // https://goo.gl/GwXx0
+      for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]] // es6 swap
+      }
+      console.log(arr)
     }
-    console.log(arr)
   }
 
-  Deck()
+  const deck = new Deck()
+  deck.Shuffle()
 })
