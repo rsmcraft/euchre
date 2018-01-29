@@ -1,8 +1,6 @@
 'use strict'
 
 $(() => {
-  Deck()
-
   function sameColor (a, b) {
     return Math.max(a, b) - Math.min(a, b) === 1
   }
@@ -45,4 +43,6 @@ $(() => {
     }
     console.log(arr)
   }
+
+  Deck()
 })
